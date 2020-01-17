@@ -10,6 +10,7 @@ const Intro = require('./steps/Intro.step');
 const Start = require('./steps/Start.step');
 const Residency  = require('./steps/Residency.step');
 const NumberOfChildren  = require('./steps/NumberOfChildren.step');
+const YourRelationships  = require('./steps/YourRelationships.step');
 const CheckYourAnswers  = require('./steps/CheckYourAnswers.step');
 
 const app = express();
@@ -44,6 +45,7 @@ journey(app, {
     Start,
     Residency,
     NumberOfChildren,
+    YourRelationships,
     CheckYourAnswers
   ],
   session: {

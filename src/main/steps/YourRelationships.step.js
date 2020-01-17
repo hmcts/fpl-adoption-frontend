@@ -3,12 +3,12 @@ const { form, text } = require('@hmcts/one-per-page/forms');
 const { answer } = require('@hmcts/one-per-page/checkYourAnswers');
 const Joi = require('joi');
 
-class NumberOfChildren extends Question {
+class YourRelationships extends Question {
   get form() {
     return form({
-      numberOfChildren: text.joi(
-        'Please enter valid number of children in application',
-        Joi.number().required().min(1).max(10)
+      marriedOrInCivilPartnership: text.joi(
+        'Please answer relationship question',
+        Joi.string().required().valid(['yes', 'no'])
       )
     });
   }
@@ -18,8 +18,8 @@ class NumberOfChildren extends Question {
   }
 
   next() {
-    return goTo(this.journey.steps.YourRelationships);
+    return goTo(this.journey.steps.CheckYourAnswers);
   }
 }
 
-module.exports = NumberOfChildren;
+module.exports = YourRelationships;

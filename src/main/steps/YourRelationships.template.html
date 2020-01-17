@@ -1,0 +1,22 @@
+{% extends "QuestionPage.html" %}
+{% from "look-and-feel/components/fields.njk" import formSection, selectionButtons %}
+
+{% set title %}
+  Are you married or in a civil partnership?
+{% endset %}
+
+{% block fields %}
+  {% call formSection() %}
+    {{
+      selectionButtons(
+        field = fields.marriedOrInCivilPartnership,
+        question = "Are you married or in a civil partnership?",
+        hideQuestion = true,
+        options = [
+          { label: "Yes", value: "yes" },
+          { label: "No", value: "no" }
+        ]
+      )
+    }}
+  {% endcall %}
+{% endblock %}
