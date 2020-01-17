@@ -14,7 +14,7 @@ class NumberOfChildren extends Question {
   }
 
   answers() {
-    return answer(this, { section: 'application-details' });
+    return answer(this, { section: 'application-details', question: 'Number of children in application' });
   }
 
   next() {
