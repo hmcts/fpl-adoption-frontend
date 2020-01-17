@@ -1,0 +1,12 @@
+{
+  "name": "fpl-adoption-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "HMCTS FPLA Team",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@hmcts/look-and-feel": "^4.0.5",
+    "@hmcts/one-per-page": "^5.3.0"
+  }
+}

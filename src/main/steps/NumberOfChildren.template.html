@@ -1,0 +1,18 @@
+{% extends "QuestionPage.html" %}
+{% from "look-and-feel/components/fields.njk" import formSection, textbox %}
+
+{% set title %}
+  How many children are you applying to adopt?
+{% endset %}
+
+{% block fields %}
+  {% call formSection() %}
+    {{
+      textbox(
+        field = fields.numberOfChildren,
+        label = "How many children are you applying to adopt?",
+        hideLabel = true
+      )
+    }}
+  {% endcall %}
+{% endblock %}

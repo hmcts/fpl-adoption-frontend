@@ -1,0 +1,35 @@
+{% extends "QuestionPage.html" %}
+{% from "look-and-feel/components/fields.njk" import formSection, selectionButtons %}
+
+{% set title %}
+  Have you lived in the British Isles for the last 12 months?
+{% endset %}
+
+{% block fields %}
+  {% call formSection() %}
+    {{
+      selectionButtons(
+        field = fields.britishIslesResident,
+        question = "Have you lived in the British Isles for the last 12 months?",
+        hideQuestion = true,
+        hint = 'If you’re adopting as a couple, you must both have lived in the British Isles for the last 12 months.',
+        options = [
+          { label: "Yes", value: "yes" },
+          { label: "No", value: "no" }
+        ]
+      )
+    }}
+    <div class="govuk-form-group">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Countries in the British Isles
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          The British Isles are made up of the United Kingdom, the Channel Islands and the Isle of Man
+        </div>
+      </details>
+    </div>
+  {% endcall %}
+{% endblock %}
