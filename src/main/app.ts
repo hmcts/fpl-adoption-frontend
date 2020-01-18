@@ -9,7 +9,7 @@ import { journey } from '@hmcts/one-per-page';
 import { Intro } from './steps/Intro.step';
 import { Start } from './steps/Start.step';
 import { Residency } from './steps/Residency.step';
-import { NumberOfChildren }  from './steps/NumberOfChildren.step';
+import { NumberOfChildren } from './steps/NumberOfChildren.step';
 import { YourRelationships } from './steps/YourRelationships.step';
 import { CheckYourAnswers } from './steps/CheckYourAnswers.step';
 
