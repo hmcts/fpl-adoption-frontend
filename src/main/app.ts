@@ -1,19 +1,19 @@
-const path = require('path');
+import * as path from 'path';
 
-const express = require('express');
-const expressSession = require('express-session');
+import * as express from 'express';
+import * as expressSession from 'express-session';
 
-const lookAndFeel = require('@hmcts/look-and-feel');
-const { journey } = require('@hmcts/one-per-page');
+import * as lookAndFeel from '@hmcts/look-and-feel';
+import { journey } from '@hmcts/one-per-page';
 
-const Intro = require('./steps/Intro.step');
-const Start = require('./steps/Start.step');
-const Residency  = require('./steps/Residency.step');
-const NumberOfChildren  = require('./steps/NumberOfChildren.step');
-const YourRelationships  = require('./steps/YourRelationships.step');
-const CheckYourAnswers  = require('./steps/CheckYourAnswers.step');
+import { Intro } from './steps/Intro.step';
+import { Start } from './steps/Start.step';
+import { Residency } from './steps/Residency.step';
+import { NumberOfChildren }  from './steps/NumberOfChildren.step';
+import { YourRelationships } from './steps/YourRelationships.step';
+import { CheckYourAnswers } from './steps/CheckYourAnswers.step';
 
-const app = express();
+const app: express.Application = express();
 
 const baseUrl = 'http://localhost:3000';
 

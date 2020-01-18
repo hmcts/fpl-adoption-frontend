@@ -1,10 +1,10 @@
-const { Question, goTo } = require('@hmcts/one-per-page');
-const { form, text } = require('@hmcts/one-per-page/forms');
-const { answer } = require('@hmcts/one-per-page/checkYourAnswers');
-const Joi = require('joi');
+import { Question, goTo, Redirector, Form, Answer } from '@hmcts/one-per-page';
+import { form, text } from '@hmcts/one-per-page/forms';
+import { answer } from '@hmcts/one-per-page/checkYourAnswers';
+import * as Joi from 'joi';
 
-class NumberOfChildren extends Question {
-  get form() {
+export class NumberOfChildren extends Question {
+  get form(): Form {
     return form({
       numberOfChildren: text.joi(
         'Please enter valid number of children in application',
@@ -13,13 +13,11 @@ class NumberOfChildren extends Question {
     });
   }
 
-  answers() {
+  answers(): Answer {
     return answer(this, { section: 'application-details', question: 'Number of children in application' });
   }
 
-  next() {
+  next(): Redirector {
     return goTo(this.journey.steps.YourRelationships);
   }
 }
-
-module.exports = NumberOfChildren;

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    // quality flags
+    "strict": false,
+    // type definitions
+    "typeRoots" : [
+      "./node_modules/@types",
+      "./typings"
+    ]
+  }
+}
