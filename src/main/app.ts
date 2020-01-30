@@ -54,4 +54,20 @@ journey(app, {
   }
 });
 
+/**
+ * Example of protected resource that redirects to login page if user is not authenticated
+ *
+ * Note: Check whether user is authenticated or not is not implemented yet so redirect happen unconditionally
+ */
+app.use('/protected', (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  response.redirect('http://localhost:3501/login?response_type=code&client_id=fpl-adoption-frontend&redirect_uri=http://localhost:3000/oauth2/callback')
+})
+
+/**
+ * Redirect that takes user to entry page upon successful log in
+ */
+app.use('/oauth2/callback', (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  response.redirect('http://localhost:3000/start')
+})
+
 app.listen(3000);
